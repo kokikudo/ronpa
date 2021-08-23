@@ -23,9 +23,6 @@ void main() {
   runApp(const MyApp());
 }
 
-///TODO
-///午後はモデルのプロパティと今後のスケジュールの確認
-
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
