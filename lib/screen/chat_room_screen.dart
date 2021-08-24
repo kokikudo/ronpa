@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ronpa/components/bobble_button.dart';
+import 'package:ronpa/components/chat_bobbles/chat_string_input.dart';
 import 'package:ronpa/constraints.dart';
 import 'package:ronpa/components/alert/leaving_alert.dart';
 import 'package:ronpa/components/chat_bobbles/normal_bobble.dart';
@@ -9,6 +10,8 @@ import 'package:ronpa/components/gong_image.dart';
 
 class ChatRoomScreen extends StatelessWidget {
   const ChatRoomScreen({Key? key}) : super(key: key);
+
+  static const id = '/home/roomList/chatRoom';
 
   @override
   Widget build(BuildContext context) {
@@ -40,10 +43,12 @@ class ChatRoomScreen extends StatelessWidget {
       ),
       body: Container(
         decoration: BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage('assets/images/backgroundImage.jpg'),
-              fit: BoxFit.fitHeight),
-        ),
+            image: DecorationImage(
+          image: AssetImage('assets/images/chatScreenBackgroundImage.jpg'),
+          fit: BoxFit.fitHeight,
+          colorFilter: ColorFilter.mode(
+              Colors.black.withOpacity(0.6), BlendMode.dstATop),
+        )),
         child: SafeArea(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -61,38 +66,7 @@ class ChatRoomScreen extends StatelessWidget {
                   text: 'なんなのなんなのなんなのなんなのなんなのなんなのなんなのなんなのなんなのなんなのなんなのなんなの',
                   userIcon: Icon(Icons.g_translate),
                   isMe: false),
-              Container(
-                padding: EdgeInsets.all(10),
-                margin: EdgeInsets.symmetric(horizontal: 30),
-                decoration: BoxDecoration(
-                  color: kLightBlue,
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    Expanded(
-                      child: TextField(
-                        onChanged: (value) {},
-                        maxLines: null,
-                        cursorColor: Colors.white,
-                        style: TextStyle(color: Colors.white),
-                        decoration: InputDecoration(
-                          border: InputBorder.none,
-                          hintText: '100文字まで',
-                          hintStyle: TextStyle(color: kBlue),
-                          suffixIcon: Bobble(
-                              height: 20,
-                              width: 50,
-                              backgroundColor: kBlue,
-                              bobbleText: 'Ronpa!',
-                              onPressed: () {}),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+              ChatStringInputField(),
             ],
           ),
         ),

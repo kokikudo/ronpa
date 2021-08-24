@@ -4,7 +4,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 //Colors
 Color kRed = Color(0xffea6257);
 Color kBlue = Color(0xff4167c1);
-Color kLightBlue = Color(0xff8495bd);
+Color kLightBlue = Color(0xffdce3f8);
 Color kInkColor = Colors.grey.withAlpha(30);
 Color kOrange = Color(0xffFF8B01);
 Color kGray = Color(0xffE4E4E4);

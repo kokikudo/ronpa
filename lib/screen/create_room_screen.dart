@@ -5,6 +5,7 @@ import 'package:ronpa/components/bobble_button.dart';
 
 class CreateRoomScreen extends StatefulWidget {
   const CreateRoomScreen({Key? key}) : super(key: key);
+  static const id = '/home/roomList/createRoom';
 
   @override
   State<CreateRoomScreen> createState() => _CreateRoomScreenState();
