@@ -16,16 +16,15 @@ class LoginInputField extends StatelessWidget {
     return TextField(
       style: TextStyle(color: Colors.black54),
       cursorColor: Colors.black54,
+      keyboardType: TextInputType.name,
       decoration: InputDecoration(
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(30)),
-        focusColor: kOrange,
         fillColor: Colors.white,
         filled: true,
         helperText: title,
         helperStyle: TextStyle(color: Colors.white),
         errorText: errorMessage,
         contentPadding: EdgeInsets.symmetric(horizontal: 16),
-        //labelStyle: kSignInTextFieldLabelStyle,
       ),
     );
   }

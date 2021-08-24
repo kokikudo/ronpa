@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ronpa/components/bobble_button.dart';
 import 'package:ronpa/components/login_input_field.dart';
 import 'package:ronpa/constraints.dart';
+import 'package:ronpa/screen/registration_screen.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
@@ -59,7 +60,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           Bobble(bobbleText: 'ログイン', backgroundColor: kRed, onPressed: () {}),
           SizedBox(height: 20),
           TextButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, RegistrationScreen.id);
+            },
             child: Text(
               '新規登録',
               style: _textTheme.button,

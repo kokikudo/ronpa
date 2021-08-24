@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 class RegistrationPasswordInputField extends StatefulWidget {
   const RegistrationPasswordInputField({
     Key? key,
-    required this.isError,
+    required this.errorMessage,
   }) : super(key: key);
 
-  final bool isError;
+  final String? errorMessage;
 
   @override
   State<RegistrationPasswordInputField> createState() =>
@@ -20,6 +20,8 @@ class _RegistrationPasswordInputFieldState
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      style: TextStyle(color: Colors.black54),
+      cursorColor: Colors.black54,
       maxLength: 12,
       obscureText: _hidePassword,
       keyboardType: TextInputType.visiblePassword,
@@ -29,11 +31,13 @@ class _RegistrationPasswordInputFieldState
       },
       decoration: InputDecoration(
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(30)),
-          labelText: 'パスワード',
-          errorText: widget.isError ? 'パスワードが一致しません。' : null,
+          fillColor: Colors.white,
+          filled: true,
+          errorText: widget.errorMessage,
           errorMaxLines: 2,
-          helperText: '半角英数字、最大12文字',
-          contentPadding: EdgeInsets.all(20),
+          helperText: 'パスワードを決めてください(8〜12文字)',
+          helperStyle: TextStyle(color: Colors.white),
+          contentPadding: EdgeInsets.all(16),
           suffixIcon: IconButton(
             icon: Icon(_hidePassword ? Icons.visibility : Icons.visibility_off),
             onPressed: () {

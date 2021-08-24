@@ -57,7 +57,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               : RegistrationPasswordInputField(errorMessage: null),
           SizedBox(height: 40),
           Bobble(
-              bobbleText: '登録する',
+              bobbleText: '登録するよ',
               backgroundColor: kBlue,
               onPressed: () {
                 setState(() {
