@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:ronpa/components/countdown.dart';
 import 'package:ronpa/constraints.dart';
+import 'package:ronpa/screen/registration_screen.dart';
+import 'package:ronpa/screen/room_list_screen.dart';
+import 'package:ronpa/screen/welcome_screen.dart';
 import 'components/login_input_field.dart';
 import 'components/registration_user_name.dart';
 import 'components/registration_password.dart';
@@ -18,10 +21,13 @@ import 'components/alert/battle_info_alert_on_chat_screen.dart';
 import 'screen/create_room_screen.dart';
 import 'screen/chat_room_screen.dart';
 import 'components/alert/result_alert.dart';
+import 'screen/welcome_screen.dart';
 
 void main() {
   runApp(const MyApp());
 }
+
+///TODO 作業前にブランチを切ること
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -32,8 +38,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: _buildAppTheme(),
-      home: const HomeScreen(),
       builder: EasyLoading.init(),
+      initialRoute: WelcomeScreen.id,
+      routes: {
+        WelcomeScreen.id: (context) => WelcomeScreen(),
+        RegistrationScreen.id: (context) => RegistrationScreen(),
+        RoomListScreen.id: (context) => RoomListScreen(),
+        CreateRoomScreen.id: (context) => CreateRoomScreen(),
+      },
     );
   }
 }
