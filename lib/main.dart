@@ -27,7 +27,7 @@ void main() {
   runApp(const MyApp());
 }
 
-///TODO 作業前にブランチを切ること
+///TODO 作業前にブランチを切る
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -69,7 +69,8 @@ ThemeData _buildAppTheme() {
 
 TextTheme _buildTextTheme(TextTheme base) {
   return base.copyWith(
-    headline2: base.headline2!.copyWith(fontFamily: 'RocknRollOne'),
+    headline2: base.headline2!
+        .copyWith(fontFamily: 'RocknRollOne', color: Colors.white),
     // アプリタイトル
     headline5: base.headline5!.copyWith(color: Colors.white),
     // 部屋作成ページのタイトル

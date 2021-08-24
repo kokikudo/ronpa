@@ -8,7 +8,7 @@ Color kLightBlue = Color(0xffdce3f8);
 Color kInkColor = Colors.grey.withAlpha(30);
 Color kOrange = Color(0xffFF8B01);
 Color kGray = Color(0xffE4E4E4);
-Color kOpponentChatColor = Color(0xff8E8E8E);
+Color kDarkGray = Color(0xff8E8E8E);
 
 //Spinner
 const kWaitingSpinner = SpinKitPouringHourglass(color: Color(0xffE4E4E4));
